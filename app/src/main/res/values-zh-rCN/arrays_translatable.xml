@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="provider_names">
+        <item>Box</item>
+        <item>Backblaze B2</item>
+        <item>Dropbox</item>
+        <item>FTP</item>
+        <item>HTTP</item>
+        <item>HubiC</item>
+        <item>pCloud</item>
+        <item>SFTP</item>
+        <item>Yandex Disk</item>
+        <item>WebDAV</item>
+        <item>Microsoft OneDrive</item>
+        <item>别名</item>
+        <item>加密</item>
+        <item>QingCloud QingStor</item>
+        <item>Microsoft Azure Blob Storage</item>
+        <item>缓存</item>
+        <item>本地存储</item>
+        <item>Google Drive</item>
+        <item>Google Photos</item>
+        <item>联合</item>
+        <item>Mega</item>
+    </array>
+
+    <array name="provider_summaries">
+        <item>云端文件存储</item>
+        <item>云端文件存储</item>
+        <item>云端文件存储</item>
+        <item>文件服务器访问</item>
+        <item>HTTP 服务器访问</item>
+        <item>云端文件存储</item>
+        <item>云端文件存储</item>
+        <item>SFTP 服务器访问</item>
+        <item>云端文件存储</item>
+        <item>WebDAV 服务器访问</item>
+        <item>云端文件存储</item>
+        <item>为远程存储或路径设置新名称</item>
+        <item>加密任意远程存储中的文件</item>
+        <item>云端对象存储</item>
+        <item>云端对象存储</item>
+        <item>在本地缓存文件以加快访问速度</item>
+        <item>访问（模拟的）SD 卡</item>
+        <item>云端文件存储</item>
+        <item>云端照片存储</item>
+        <item>将多个远程存储合并为一个</item>
+        <item>云端文件存储</item>
+    </array>
+</resources>

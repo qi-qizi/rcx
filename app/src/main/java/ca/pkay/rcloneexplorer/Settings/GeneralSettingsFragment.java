@@ -492,7 +492,7 @@ public class GeneralSettingsFragment extends Fragment {
 
         builder.setTitle(R.string.pref_locale_dlg_title);
         final int[] userSelected = new int[1];
-        builder.setSingleChoiceItems(R.array.locales, initialSelection, (dialog, which) -> userSelected[0] = which);
+        builder.setSingleChoiceItems(R.array.locale_names, initialSelection, (dialog, which) -> userSelected[0] = which);
         builder.setNegativeButton(R.string.cancel, null);
         builder.setPositiveButton(R.string.select, (dialog, which) -> {
             String locale = locales.get(userSelected[0]);

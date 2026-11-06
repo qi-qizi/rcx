@@ -9,6 +9,13 @@
     <array name="locales">
         <item>en-US</item>
         <item>de-DE</item>
+        <item>zh-CN</item>
+    </array>
+
+    <array name="locale_names">
+        <item>English</item>
+        <item>Deutsch</item>
+        <item>简体中文</item>
     </array>
 
     <array name="provider_ids">
