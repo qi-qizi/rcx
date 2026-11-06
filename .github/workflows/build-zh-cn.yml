@@ -1,0 +1,46 @@
+name: Build zh-CN debug APK
+
+on:
+  push:
+    branches:
+      - 'add-zh-cn'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.16.15'
+          cache: false
+
+      - name: Install Android platform, build tools, NDK
+        run: |
+          set -e
+          SDKMANAGER="$(find "$ANDROID_SDK_ROOT" -name sdkmanager -type f | head -1)"
+          echo "using $SDKMANAGER"
+          yes | "$SDKMANAGER" --install "platforms;android-30" "build-tools;30.0.3" "ndk;22.1.7171670" > /dev/null
+          ls "$ANDROID_SDK_ROOT/ndk/22.1.7171670/source.properties"
+
+      - name: Build rclone binaries
+        run: ./gradlew --no-daemon rclone:buildNative
+
+      - name: Build debug APKs
+        run: ./gradlew --no-daemon assembleOssDebug
+
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: rcx-zh-cn-debug-apks
+          path: app/build/outputs/apk/oss/debug/*.apk
+          retention-days: 7
