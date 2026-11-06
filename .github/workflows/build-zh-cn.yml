@@ -34,7 +34,7 @@ jobs:
           echo "using jdk $JDK17 for sdkmanager"
           export JAVA_HOME="$JDK17"
           (yes | "$SDKMANAGER" --licenses > /dev/null 2>&1) || true
-          "$SDKMANAGER" --install "platforms;android-30" "build-tools;30.0.3" "ndk;22.1.7171670" > /dev/null
+          "$SDKMANAGER" --install "platforms;android-30" "platforms;android-31" "build-tools;30.0.3" "build-tools;31.0.0" "ndk;22.1.7171670" > /dev/null
           ls "$ANDROID_SDK_ROOT/ndk/"
 
       - name: Build rclone binaries
